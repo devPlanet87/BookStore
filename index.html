@@ -27,12 +27,17 @@
          <div class="row g-4">
             <!-- Cover + Formats -->
             <div class="col-lg-4 text-center">
-               <img src="Cover.JPG" alt="Book Cover" class="cover-img mb-3 rounded" style="width: 310px; height: 478px">
+               <a href="#" class="preview-trigger">
+                <img src="Cover.JPG" alt="Book Cover" class="cover-img mb-3 rounded" style="width: 310px; height: 478px">
+	            </a>
                <p><span class="info-label">கிடைக்கக்கூடிய வடிவங்கள்:</span> PDF</p>
                <p><span class="badge badge-free text-white">Free e‑Book</span></p>              
                <p class="mt-4">👁️‍🗨️ பார்வைகள்: <span id="viewCount">0</span></p>
-               <button id="previewBtn" type="button" class="btn btn-outline-secondary w-75 mb-3" data-bs-toggle="modal" data-bs-target="#previewModal" title="Preview">👀 முன்னோட்டம் காண்க</button>
+               <button id="previewBtn" type="button" class="btn btn-outline-secondary w-75 mb-3 preview-trigger" title="Preview">👀 முன்னோட்டம் காண்க</button>
                <a href="Ullakkatavai-thiranta-pozhudu.pdf" class="btn btn-primary btn-lg w-75" target="_blank" title="Download">⬇️ பதிவிறக்க</a>
+               <p class="mt-3 text-muted small">
+                 📦 காகித புத்தகத்தை வாங்க விரும்பினால், தயவுசெய்து <a href="mailto:phmanimaran@yahoo.co.in">மின்னஞ்சல்</a> மூலம் தொடர்பு கொள்ளவும்.
+               </p>
             </div>
             <!-- Basic Info -->
             <div class="col-lg-8">
@@ -49,7 +54,7 @@
                <ul>
                   <li><strong>நூலின் பெயர்: </strong>உள்ளக்கதவைத் திறந்த பொழுது</li>
                   <li><strong>நூல் உரிமை: </strong>ஆசிரியருக்கு</li>
-                  <li><strong>வெளியீடு: </strong>குமரி முத்தமிழ் மன்றம்</li>
+                  <li><strong>வெளியீடு: </strong>குமரி முத்தமிழ் மன்றம் (பதிவு எண்: UDYAM. T.N.09-0028133)</li>
                   <li><strong>பக்கங்கள்: </strong> 114</li>
                   <li><strong>பதிப்பு ஆண்டு: </strong> மே 2025</li>
                </ul> 
@@ -108,15 +113,20 @@
        })();
      </script>
       <script>
-         document.getElementById('previewBtn').addEventListener('click', function (e) {
+        document.querySelectorAll('.preview-trigger').forEach(el => {
+         el.addEventListener('click', function (e) {
             if (window.innerWidth < 768) {
                // On small screens, open new tab instead of modal
                e.preventDefault();
                window.open('Preview.pdf', '_blank');
             } else {
                // On larger screens, show modal (default)
+         		const modal = new bootstrap.Modal(document.getElementById('previewModal'));
+            	modal.show();
             }
          });
+	});
+
       </script>
     </div>
    </body>
