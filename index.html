@@ -46,6 +46,8 @@
                   <li><strong>பக்கங்கள்: </strong> 114</li>
                   <li><strong>பதிப்பு ஆண்டு: </strong> மே 2025</li>
                </ul>
+               <!-- View Counter -->
+               <p class="mt-4">👁️‍🗨️ பார்வைகள்: <span id="viewCount">Loading...</span></p>
             </div>
          </div>
          <!-- Footer -->
@@ -53,5 +55,13 @@
             <p>&copy; 2025 மணிமாறன். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
          </footer>
       </div>
+      <!-- CountAPI Script -->
+      <script>
+        fetch('https://api.countapi.xyz/hit/devplanet87.github.io/BookStore')
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('viewCount').innerText = data.value;
+          });
+      </script>
    </body>
 </html>
