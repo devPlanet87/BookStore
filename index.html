@@ -57,10 +57,14 @@
       </div>
       <!-- CountAPI Script -->
       <script>
-        fetch('https://api.countapi.xyz/hit/devplanet87.github.io/BookStore')
-          .then(response => response.json())
+        fetch('https://countapi.mileshilliard.com/api/v1/hit/devplanet87-BookStore')
+          .then(res => res.json())
           .then(data => {
             document.getElementById('viewCount').innerText = data.value;
+          })
+          .catch(err => {
+            console.error('Counter error:', err);
+            document.getElementById('viewCount').innerText = '—';
           });
       </script>
    </body>
