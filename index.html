@@ -46,7 +46,13 @@
                   <li><strong>வெளியீடு: </strong>குமரி முத்தமிழ் மன்றம்</li>
                   <li><strong>பக்கங்கள்: </strong> 114</li>
                   <li><strong>பதிப்பு ஆண்டு: </strong> மே 2025</li>
-               </ul>               
+               </ul> 
+               <!-- Disqus Comments -->
+              <section class="mt-5">
+                <h4>📋 வாசகர்களின் விமர்சனங்கள்</h4>
+                <div id="disqus_thread"></div>
+              </section>
+             </div>
             </div>
          </div>
          <!-- Footer -->
@@ -66,5 +72,20 @@
             document.getElementById('viewCount').innerText = '—';
           });
       </script>
+      <!-- Disqus Embed Script -->
+     <script>
+       var disqus_config = function () {
+         this.page.url = window.location.href;
+         this.page.identifier = 'bookstore-tamil-ebook';
+       };
+       (function() {
+         var d = document, s = d.createElement('script');
+         s.src = 'https://devplanet87-bookstore.disqus.com/embed.js';
+         s.setAttribute('data-timestamp', +new Date());
+         (d.head || d.body).appendChild(s);
+       })();
+     </script>
+      
+    </div>
    </body>
 </html>
